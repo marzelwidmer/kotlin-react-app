@@ -6,7 +6,7 @@ import react.RBuilder
 import react.dom.div
 import react.dom.h1
 
-fun RBuilder.gameUI() {
+fun RBuilder.gameUI(game: Game) {
     div {
         h1 { +"Blackjack" }
         div {
@@ -17,8 +17,8 @@ fun RBuilder.gameUI() {
             }
 
             // UI component
-            handUI()
-            handUI()
+            handUI(game.ph)
+            handUI(game.dh)
         }
     }
 }

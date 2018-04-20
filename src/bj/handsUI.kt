@@ -6,7 +6,7 @@ import react.RBuilder
 import react.dom.b
 import react.dom.div
 
-fun RBuilder.handUI() {
+fun RBuilder.handUI(hand: Hand) {
     div {
 
         attrs.style = js {
@@ -19,7 +19,13 @@ fun RBuilder.handUI() {
         }
 
         div { b { +"Player hand" } }
-        div { +"cards goes here" }
+        div {
+            hand.cards.forEach {
+                div {
+                    +it.name
+                }
+            }
+        }
         div { b { +"12 Points" } }
     }
 }
